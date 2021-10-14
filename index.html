@@ -2,23 +2,21 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="style.css" />
-		
-		<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61680d1d4eb1cf82"></script>
 
-		
+		<!-- Go to www.addthis.com/dashboard to customize your tools -->
+		<script
+			type="text/javascript"
+			src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61680d1d4eb1cf82"
+		></script>
 	</head>
 	<body>
 		<div>Teachable Machine Image Model</div>
 		<button type="button" onclick="init()">Start</button>
 		<button type="button" onclick="predict()">조회</button>
-		
-		
-                <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                <div class="addthis_inline_share_toolbox"></div>
-            
 
-		
+		<!-- Go to www.addthis.com/dashboard to customize your tools -->
+		<div class="addthis_inline_share_toolbox"></div>
+
 		<script
 			class="jsbin"
 			src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
@@ -44,7 +42,7 @@
 				</div>
 			</div>
 			<div class="file-upload-content">
-				<img class="file-upload-image" id ="test_image"src="#" alt="your image" />
+				<img class="file-upload-image" id="test_image" src="#" alt="your image" />
 				<div class="image-title-wrap">
 					<button type="button" onclick="removeUpload()" class="remove-image">
 						Remove <span class="image-title">Uploaded Image</span>
@@ -52,6 +50,14 @@
 				</div>
 			</div>
 		</div>
+		
+			
+		<ins class="kakao_ad_area" style="display:none;" 
+ data-ad-unit    = "DAN-31zLyBR9WZwASIc3" 
+ data-ad-width   = "320" 
+ data-ad-height  = "100"></ins> 
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+		
 
 		<div id="webcam-container"></div>
 		<div id="label-container"></div>
@@ -112,11 +118,8 @@
 				model = await tmImage.load(modelURL, metadataURL);
 				maxPredictions = model.getTotalClasses();
 
-				
-				
-				
 				// 웹캠 작성 구간 여긴 삭제
-				
+
 				/*
 				// Convenience function to setup a webcam
 				const flip = true; // whether to flip the webcam
@@ -125,11 +128,9 @@
 				await webcam.play();
 				window.requestAnimationFrame(loop);
 				*/
-	
-				
-				
+
 				// append elements to the DOM
-			//	document.getElementById('webcam-container').appendChild(webcam.canvas);
+				//	document.getElementById('webcam-container').appendChild(webcam.canvas);
 				labelContainer = document.getElementById('label-container');
 				for (let i = 0; i < maxPredictions; i++) {
 					// and class labels
@@ -137,12 +138,9 @@
 				}
 			}
 
-			
-			
-			
-				// 웹캠 작성 구간 여긴 삭제
-				
-				/*
+			// 웹캠 작성 구간 여긴 삭제
+
+			/*
 			
 			
 			async function loop() {
@@ -152,14 +150,12 @@
 			}
 				*/
 
-
 			// run the webcam image through the image model
 			async function predict() {
 				// predict can take in an image, video or canvas html element
-				
-				
-				var image = document.getElementById('test_image') 
-				
+
+				var image = document.getElementById('test_image');
+
 				const prediction = await model.predict(image, false);
 				for (let i = 0; i < maxPredictions; i++) {
 					const classPrediction =
